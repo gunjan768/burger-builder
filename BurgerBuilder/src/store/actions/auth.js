@@ -65,7 +65,7 @@ export const auth = (email, password, isSignup) =>
 
         let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCUSIWQNoqf7zCkrXIydJ6qJGSwgL4lVgM';
         
-        if (!isSignup) 
+        if(!isSignup) 
         {
             url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCUSIWQNoqf7zCkrXIydJ6qJGSwgL4lVgM';
         }
@@ -109,7 +109,7 @@ export const authCheckState = () =>
     {
         const token = localStorage.getItem('token');
         
-        if( !token ) 
+        if(!token) 
         {
             dispatch(logout());
         } 

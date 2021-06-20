@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Auxs/Auxs';
 
-const withErrorHandler = ( WrappedComponent, axios ) =>
+const withErrorHandler = (WrappedComponent, axios) =>
 {
     // Here we have used a class without name and it is called class factory. Here we are returning
     // the whole class.
@@ -12,7 +12,7 @@ const withErrorHandler = ( WrappedComponent, axios ) =>
         {
             super(props);
 
-            this.reqInterceptor =  axios.interceptors.request.use(req =>
+            this.reqInterceptor = axios.interceptors.request.use(req =>
             {
                 // console.log(req);
 
@@ -69,9 +69,9 @@ const withErrorHandler = ( WrappedComponent, axios ) =>
             return (
                 <Aux>
                     <Modal show = { this.state.error } modalClosed = { this.errorConfimedHandler }>
-                        { 
-                            this.state.error ? this.state.error.message : null 
-                        }
+                    { 
+                        this.state.error ? this.state.error.message : null 
+                    }
                     </Modal>
 
                     <WrappedComponent { ...this.props } />

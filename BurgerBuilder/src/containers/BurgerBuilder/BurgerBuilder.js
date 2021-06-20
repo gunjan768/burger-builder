@@ -10,7 +10,10 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import axios from '../../axiosOrder';
 
-class BurgerBuilder extends React.Component
+// We are exporting "BurgerBuilder" class separately though we are exporting wrapped inside the connect() method of the Redux
+// (see at the last of the this page) because we want to separate the Redux part or say strip out the Redux part from the
+// "BurgerBuilder" class. Because we don't test the services (Redux) as they were already been tested.
+export class BurgerBuilder extends React.Component
 {
     state = 
     {
@@ -72,7 +75,7 @@ class BurgerBuilder extends React.Component
     {
         this.props.onInitPurchase();
         
-        this.props.history.push('/checkout')
+        this.props.history.push('/checkout');
      }
 
     render()
@@ -94,7 +97,7 @@ class BurgerBuilder extends React.Component
         let orderSummary = null;
         let burger = this.props.error ? <p>Ingredients failed to load</p> : <Spinner />;
 
-        if( this.props.ings )
+        if(this.props.ings)
         {
             orderSummary = (
                 <OrderSummary 

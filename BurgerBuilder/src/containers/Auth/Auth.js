@@ -63,7 +63,6 @@ class Auth extends React.Component
     }
 
     
-
     inputChangedHandler = (event, controlName) => 
     {
         const updatedControls = updateObject( this.state.controls, {
@@ -167,7 +166,7 @@ class Auth extends React.Component
 // mapStateToProps actually stores a function which expects the state stored in redux as the input and returns a JS object which is a 
 // map of props names and slices of the state stored in redux. Here only which part of state stored in redux we want to send or inject
 // in the container (means in class) as a props. It will be called each time automatically whenever there is a change in the redux state
-// and will update the state
+// and will update the state.
 const mapStateToProps = state => 
 {
     console.log("Auth", state);
@@ -184,7 +183,7 @@ const mapStateToProps = state =>
 
 // mapDispatchToProps stores a function which excepts a function as an argument. This function is a dispatch function. When you call
 // any one of the functions defined inside mapDispatchToProps , dispatch() will be executed and then it will search each and every
-// reducers for the 'type' so every reducers defined will run
+// reducers for the 'type' so every reducers defined will run.
 const mapDispatchToProps = dispatch => 
 {
     return (

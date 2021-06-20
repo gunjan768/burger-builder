@@ -164,7 +164,7 @@ class ContactData extends React.Component
             isValid = value.length <= rules.maxLength && isValid;
         }
 
-        if (rules.isEmail) 
+        if(rules.isEmail) 
         {
             const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
             isValid = pattern.test(value) && isValid
@@ -281,5 +281,4 @@ const mapDispatchToProps = dispatch =>
     })
 }
 
-// Here we have nothing to dispatch so we omitted the second argument i.e 'mapDispatchToProps'
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));

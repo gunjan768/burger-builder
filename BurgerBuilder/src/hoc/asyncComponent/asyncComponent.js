@@ -13,7 +13,7 @@ const asyncComponent = (importComponent) =>
         {
             importComponent()
             .then(cmp => 
-                {
+            {
                 this.setState(
                 {
                     component: cmp.default

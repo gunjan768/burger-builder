@@ -7,7 +7,7 @@ export const updateObject = (oldObject, updatedProperties) =>
     })
 }
 
-export const checkValidation = ( value, rules ) =>
+export const checkValidation = (value, rules) =>
 {
     let isValid = true;
 
